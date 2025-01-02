@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* Đặt nền màu sáng cho trang */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Header */
+header {
+  background-color: #0d6efd;
+  padding: 1rem;
+}
+
+header .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white !important;
+}
+
+header .navbar-nav .nav-link {
+  font-size: 1.1rem;
+  color: white !important;
+  margin-right: 1rem;
+}
+
+header .navbar-nav .nav-link:hover {
+  color: #ffd700 !important;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+}
+
+/* Các phần tử trong form */
+form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+form label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+form input:focus, form select:focus {
+  border-color: #0d6efd;
+  outline: none;
+}
+
+form button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Table styles */
+.table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  text-align: center;
+  padding: 1rem;
+}
+
+.table th {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table td .btn {
+  margin: 0 0.5rem;
+}
+
+.modal-content {
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header .navbar-brand {
+      font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+      font-size: 1rem;
+  }
+
+  .table th, .table td {
+      font-size: 0.9rem;
+  }
+
+  form {
+      padding: 1.5rem;
+  }
+}
+
+
+/* Tổng thể */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Tiêu đề */
+h2.text-center {
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+/* Thẻ card */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nội dung thẻ */
+.card-body {
+  text-align: left;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+/* Nút bấm */
+button.btn {
+  border: none;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.btn-warning {
+  background-color: #ffc107;
+  color: #ffffff;
+}
+
+button.btn-warning:hover {
+  background-color: #e0a800;
+  color: #ffffff;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333;
+  color: #ffffff;
+}
+
+/* Bố cục */
+.d-flex {
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.card-body p:last-child {
+  margin-bottom: 15px;
+}
+
+
+.footer a:hover {
+  color: #f9c74f; /* Màu vàng nổi bật */
+  text-decoration: underline;
+}
+
+.footer h5 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
