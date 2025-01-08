@@ -5,7 +5,7 @@ function Navigation() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-                <Link className="navbar-brand" to="/">HOME</Link>
+                {/* <Link className="navbar-brand" to="/">HOME</Link> */}
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -18,7 +18,7 @@ function Navigation() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
+                    {/* <ul className="navbar-nav">
                         <li className="nav-item">
                             <Link className="nav-link" to="/services">Services</Link>
                         </li>
@@ -28,7 +28,7 @@ function Navigation() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/contracts">Contracts</Link>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </nav>

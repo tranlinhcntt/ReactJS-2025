@@ -5,7 +5,7 @@ function Customers() {
     const [customers, setCustomers] = useState([]); 
     const [loading, setLoading] = useState(true); 
     const [error, setError] = useState(null); 
-    const [editCustomer, setEditCustomer] = useState(null); // Trạng thái để lưu khách hàng đang được sửa
+    const [editCustomer, setEditCustomer] = useState(null); 
     const [newCustomer, setNewCustomer] = useState({
         name: '',
         dob: '',
@@ -15,10 +15,10 @@ function Customers() {
         customerType: '',
         address: ''
     });
-    const [showAddForm, setShowAddForm] = useState(false); // State để điều khiển việc ẩn/hiện form thêm mới
+    const [showAddForm, setShowAddForm] = useState(false);
 
     useEffect(() => {
-        // Lấy danh sách khách hàng từ API
+        
         axios.get('http://localhost:3100/customers')
             .then(response => {
                 setCustomers(response.data); 
@@ -31,7 +31,7 @@ function Customers() {
             });
     }, []);
 
-    // Hàm xử lý thay đổi dữ liệu trong form thêm mới
+    
     const handleNewCustomerChange = (e) => {
         const { name, value } = e.target;
         setNewCustomer(prevState => ({
@@ -40,7 +40,7 @@ function Customers() {
         }));
     };
 
-    // Hàm xử lý thêm khách hàng mới
+   
     const handleAddCustomer = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3100/customers', newCustomer)
@@ -54,8 +54,8 @@ function Customers() {
                     email: '',
                     customerType: '',
                     address: ''
-                }); // Reset form
-                setShowAddForm(false); // Ẩn form sau khi thêm khách hàng
+                }); 
+                setShowAddForm(false); 
             })
             .catch(err => {
                 console.error(err);
@@ -63,12 +63,12 @@ function Customers() {
             });
     };
 
-    // Hàm xử lý sửa khách hàng
+   
     const handleEditCustomer = (customer) => {
         setEditCustomer(customer);
     };
 
-    // Hàm xử lý thay đổi dữ liệu trong form sửa
+    
     const handleEditChange = (e) => {
         const { name, value } = e.target;
         setEditCustomer(prevCustomer => ({
@@ -77,7 +77,7 @@ function Customers() {
         }));
     };
 
-    // Hàm xử lý cập nhật khách hàng
+    
     const handleUpdateCustomer = (e) => {
         e.preventDefault();
         axios.put(`http://localhost:3100/customers/${editCustomer.id}`, editCustomer)
@@ -87,7 +87,7 @@ function Customers() {
                         customer.id === editCustomer.id ? response.data : customer
                     )
                 );
-                setEditCustomer(null); // Đóng form chỉnh sửa
+                setEditCustomer(null);
             })
             .catch(err => {
                 console.error(err);
@@ -95,7 +95,7 @@ function Customers() {
             });
     };
 
-    // Hàm xử lý xóa khách hàng
+    
     const handleDeleteCustomer = (id) => {
         axios.delete(`http://localhost:3100/customers/${id}`)
             .then(() => {
@@ -119,27 +119,27 @@ function Customers() {
 
     return (
         <div>
-            <h2 className="text-center">Customer List</h2>
+            <h2 className="text-center">Danh sách khách hàng</h2>
             
-            {/* Nút ẩn/hiện form thêm mới */}
+            {/* ẩn hiện */}
             <button
                 className="btn btn-primary mb-3"
                 onClick={() => setShowAddForm(!showAddForm)}
             >
-                {showAddForm ? 'Cancel Add' : 'Add New Customer'}
+                {showAddForm ? 'ẩn thêm mới' : 'Thêm mới'}
             </button>
 
-            {/* Form thêm mới khách hàng */}
+            {/* thêm */}
             {showAddForm && (
                 <div className="card mb-4">
                     <div className="card-body">
-                        <h5 className="card-title">Add New Customer</h5>
+                       
                         <form onSubmit={handleAddCustomer}>
                             <div className="form-group">
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Name"
+                                    placeholder="Tên"
                                     name="name"
                                     value={newCustomer.name}
                                     onChange={handleNewCustomerChange}
@@ -164,16 +164,16 @@ function Customers() {
                                     onChange={handleNewCustomerChange}
                                     required
                                 >
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
+                                    <option value="Male">Nam</option>
+                                    <option value="Female">Nữ</option>
+                                    <option value="Other">Khác</option>
                                 </select>
                             </div>
                             <div className="form-group">
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Phone"
+                                    placeholder="SĐT"
                                     name="phone"
                                     value={newCustomer.phone}
                                     onChange={handleNewCustomerChange}
@@ -199,32 +199,32 @@ function Customers() {
                                     onChange={handleNewCustomerChange}
                                     required
                                 >
-                                    <option value="Regular">Regular</option>
                                     <option value="VIP">VIP</option>
+                                    <option value="Regular">regular</option>
                                 </select>
                             </div>
                             <div className="form-group">
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Address"
+                                    placeholder="Địa chỉ"
                                     name="address"
                                     value={newCustomer.address}
                                     onChange={handleNewCustomerChange}
                                     required
                                 />
                             </div>
-                            <button type="submit" className="btn btn-primary">Add Customer</button>
+                            <button type="submit" className="btn btn-primary">Thêm khách hàng</button>
                         </form>
                     </div>
                 </div>
             )}
 
-            {/* Hiển thị form sửa nếu có */}
+            {/* sửa */}
             {editCustomer && (
                 <div className="card mb-4">
                     <div className="card-body">
-                        <h5 className="card-title">Edit Customer</h5>
+                        <h5 className="card-title">Sửa</h5>
                         <form onSubmit={handleUpdateCustomer}>
                             <div className="form-group">
                                 <input
@@ -305,20 +305,20 @@ function Customers() {
                                     required
                                 />
                             </div>
-                            <button type="submit" className="btn btn-success">Update</button>
+                            <button type="submit" className="btn btn-success">Cập nhật</button>
                             <button
                                 type="button"
                                 className="btn btn-secondary ml-2"
                                 onClick={() => setEditCustomer(null)}
                             >
-                                Cancel
+                                Hủy
                             </button>
                         </form>
                     </div>
                 </div>
             )}
 
-            {/* Hiển thị danh sách khách hàng */}
+            {/* danh sách */}
             <table className="table table-striped">
                 <thead>
                     <tr>

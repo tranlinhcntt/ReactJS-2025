@@ -30,7 +30,7 @@ function Contracts() {
 
     return (
         <div>
-            <h2 className="text-center">Contract List</h2>
+            <h2 className="text-center">Danh sách hợp đồng</h2>
             <table className="table table-striped">
                 <thead>
                     <tr>

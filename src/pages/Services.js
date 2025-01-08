@@ -105,7 +105,7 @@ function Services() {
         <div>
             <h2 className="text-center">Danh sách dịch vụ</h2>
 
-            {/* Nút để hiển thị/ẩn form thêm mới */}
+            {/* ẩn hiện */}
             <button
                 className="btn btn-info mb-4"
                 onClick={() => setShowAddForm(!showAddForm)}
@@ -113,7 +113,7 @@ function Services() {
                 {showAddForm ? 'Ẩn Form Thêm Mới' : 'Hiện Form Thêm Mới'}
             </button>
 
-            {/* Form thêm mới dịch vụ */}
+            {/* thêm mới */}
             {showAddForm && (
                 <div className="card mb-4">
                     <div className="card-body">
@@ -180,7 +180,7 @@ function Services() {
                 </div>
             )}
 
-            {/* Hiển thị danh sách dịch vụ */}
+            {/* ds */}
             <div className="d-flex flex-wrap justify-content-center">
                 {services.map(service => (
                     <div className="card m-2" style={{ width: "18rem" }} key={service.id}>
@@ -191,7 +191,7 @@ function Services() {
                             <p>SL: {service.maxPeople}</p>
                             <p>Loại: {service.rentType}</p>
                             <button
-                                className="btn btn-warning btn-sm mr-2"
+                                className="btn btn-warning btn-sm mr-2 m-2"
                                 onClick={() => setEditService(service)}
                             >
                                 Sửa
@@ -207,7 +207,7 @@ function Services() {
                 ))}
             </div>
 
-            {/* Form chỉnh sửa dịch vụ */}
+            {/* edit */}
             {editService && (
                 <div className="card mt-4">
                     <div className="card-body">
