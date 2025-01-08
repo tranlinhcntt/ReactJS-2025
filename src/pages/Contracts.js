@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Contracts() {
-    const contracts = [
-        { id: 1, contractNumber: 'C01', startDate: '01/01/2024', endDate: '07/01/2024', deposit: '5,000,000 VND', total: '20,000,000 VND', customerName: 'Trần Văn A' },
-        { id: 2, contractNumber: 'C02', startDate: '10/01/2024', endDate: '15/01/2024', deposit: '3,000,000 VND', total: '12,000,000 VND', customerName: 'Nguyễn Thị B' },
-        { id: 3, contractNumber: 'C03', startDate: '20/01/2024', endDate: '25/01/2024', deposit: '4,000,000 VND', total: '16,000,000 VND', customerName: 'Phan Văn C' },
-    ];
+    const [contracts, setContracts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null); 
+
+   
+    useEffect(() => {
+        axios.get('http://localhost:3100/contracts')
+            .then(response => {
+                setContracts(response.data); 
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error(err);
+                setError('Failed to fetch contracts');
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) {
+        return <p>Loading contracts...</p>;
+    }
+
+    if (error) {
+        return <p>{error}</p>;
+    }
 
     return (
         <div>
@@ -27,12 +48,11 @@ function Contracts() {
                         <tr key={contract.id}>
                             <td>{index + 1}</td>
                             <td>{contract.contractNumber}</td>
-                            <td>{contract.customerName}</td>
                             <td>{contract.startDate}</td>
                             <td>{contract.endDate}</td>
                             <td>{contract.deposit}</td>
                             <td>{contract.total}</td>
-                           
+                            <td>{contract.customerName}</td>
                         </tr>
                     ))}
                 </tbody>

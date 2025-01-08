@@ -1,5 +1,7 @@
 import React from 'react';
-import slide1 from '../assets/images/slide1.jpg'
+import slide1 from '../assets/images/1.png'
+import slide2 from '../assets/images/2.png'
+import slide3 from '../assets/images/3.png'
 
 function Carousel() {
     return (
@@ -12,10 +14,10 @@ function Carousel() {
       
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..."/>
+      <img src={slide2} class="d-block w-100" alt="slide2"/>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..."/>
+      <img src={slide3} class="d-block w-100" alt="slide3"/>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

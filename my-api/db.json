@@ -1,0 +1,24 @@
+{
+    "services": [
+      { "id": 1, "name": "Villa Ocean View", "area": "200m²", "cost": "10,000,000 VND", "maxPeople": 10, "rentType": "Day", "description": "Luxury villa with ocean view" },
+      { "id": 2, "name": "Deluxe House", "area": "120m²", "cost": "7,000,000 VND", "maxPeople": 8, "rentType": "Month", "description": "Comfortable house for family" },
+      { "id": 3, "name": "Single Room", "area": "30m²", "cost": "1,500,000 VND", "maxPeople": 2, "rentType": "Day", "description": "Cozy room for couples" }
+    ],
+    
+    "customers": [
+        { "id": 1, "name": "A", "dob": "01/01/1985", "gender": "Nam", "phone": "0901234567", "email": "abc@gmail.com", "customerType": "Gold", "address": "123 đường Hoàn Kiếm" },
+        { "id": 2, "name": "B", "dob": "15/06/1990", "gender": "Nữ", "phone": "0919876543", "email": "bcd@gmail.com", "customerType": "Platinum", "address": "456 Trần Hưng Đạo" },
+        { "id": 3, "name": "C", "dob": "20/03/1988", "gender": "Nữ", "phone": "0908765432", "email": "cde@gmail.com", "customerType": "Silver", "address": "789 Mỹ Đình" }
+      ],
+
+      
+        "contracts": [
+          { "id": 1, "contractNumber": "C01", "startDate": "01/01/2024", "endDate": "07/01/2024", "deposit": "5,000,000 VND", "total": "20,000,000 VND", "customerName": "Trần Văn A" },
+          { "id": 2, "contractNumber": "C02", "startDate": "10/01/2024", "endDate": "15/01/2024", "deposit": "3,000,000 VND", "total": "12,000,000 VND", "customerName": "Nguyễn Thị B" },
+          { "id": 3, "contractNumber": "C03", "startDate": "20/01/2024", "endDate": "25/01/2024", "deposit": "4,000,000 VND", "total": "16,000,000 VND", "customerName": "Phan Văn C" }
+        ]
+      
+      
+  }
+  
+
